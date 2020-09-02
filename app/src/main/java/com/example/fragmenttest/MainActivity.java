@@ -1,5 +1,6 @@
 package com.example.fragmenttest;
 
+import android.annotation.SuppressLint;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -23,8 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button:
-                AnotherRightFragment fragment = new AnotherRightFragment();
-                replaceFragment(fragment);
+                replaceFragment(new AnotherRightFragment());
                 break;
             default:
                 break;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void replaceFragment(Fragment fragment){
         /*FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.right_layout,fragment);
+        transaction.replace(R.id.right_fragment,fragment);
         transaction.addToBackStack(null);
         transaction.commit();*/
 
